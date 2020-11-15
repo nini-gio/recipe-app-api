@@ -1,0 +1,17 @@
+FROM python:3.7
+MAINTAINER Giovanni Nini
+
+
+ENV PYTHONUNBUFFERED 1
+RUN apt-get update
+
+
+RUN mkdir /opt/code
+COPY . /opt/code
+RUN pip install -r /opt/code/requirements.txt
+
+RUN adduser user
+RUN chown -R user:user /opt/code
+USER user
+
+EXPOSE 8000
