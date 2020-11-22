@@ -10,8 +10,8 @@ RUN mkdir /opt/code
 COPY . /opt/code
 RUN pip install -r /opt/code/requirements.txt
 
-RUN adduser user
-RUN chown -R user:user /opt/code
-USER user
+#RUN adduser user
+#RUN chown -R user:user /opt/code
+#USER user
 
 EXPOSE 8000

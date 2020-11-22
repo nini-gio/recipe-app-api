@@ -1,0 +1,15 @@
+language: python
+
+python:
+   - "3.6"
+
+warnings_are_errors: false
+
+services:
+   - docker
+
+before_script:
+   - pip install docker-compose
+
+script:
+   - docker-compose run web-app-dev sh -c "python -m pytest && flake8"
